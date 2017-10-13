@@ -6,6 +6,8 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm &&\
     yum install -y python36u python36u-pip python36u-devel git &&\ 
     yum clean all
 
-RUN ln -sf /usr/bin/python3.6 /usr/bin/python
+RUN ln -sf /usr/bin/python3.6 /usr/bin/python &&\
+    ln -sf /usr/bin/pip3.6 /usr/bin/pip
+
 USER root
 CMD ["/bin/bash"]
