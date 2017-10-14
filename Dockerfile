@@ -10,6 +10,7 @@ RUN ln -sf /usr/bin/python3.6 /usr/bin/python &&\
     ln -sf /usr/bin/pip3.6 /usr/bin/pip
 
 RUN sed -i 's/#!\/usr\/bin\/python/#!\/usr\/bin\/python2/g' /usr/bin/yum
+RUN sed -i 's/#!\/usr\/bin\/python/#!\/usr\/bin\/python2/g' /usr/libexec/urlgrabber-ext-down
 
 USER root
 CMD ["/bin/bash"]
