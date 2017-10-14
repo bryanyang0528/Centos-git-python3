@@ -9,8 +9,8 @@ RUN yum -y install https://centos7.iuscommunity.org/ius-release.rpm &&\
 RUN ln -sf /usr/bin/python3.6 /usr/bin/python &&\
     ln -sf /usr/bin/pip3.6 /usr/bin/pip
 
-RUN sed -i 's/#!\/usr\/bin\/python/#!\/usr\/bin\/python2/g' /usr/bin/yum
-RUN sed -i 's/#!\/usr\/bin\/python/#!\/usr\/bin\/python2/g' /usr/libexec/urlgrabber-ext-down
+RUN sed -i 's/#!\/usr\/bin\/python/#!\/usr\/bin\/python2/g' /usr/bin/yum &&\
+    sed -i 's/\/usr\/bin\/python/\/usr\/bin\/python2/g' /usr/libexec/urlgrabber-ext-down
 
 USER root
 CMD ["/bin/bash"]
